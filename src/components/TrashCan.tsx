@@ -1,21 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDrop } from "react-dnd";
 import { ItemTypes } from "../constants";
-import { CardList } from "../components/CardList";
+import { noteData } from "../interfaces/noteData";
+import trash from "../trash.png";
 
-export function TrashCan(): JSX.Element {
-    function deleteCard(id: number){
-        id = void;
-    };
-    //Handles the dropping of things onto the corkboard
+type deleteCardProps = {
+    deleteNote: (id: number) => void;
+};
+
+const DeleteItem: React.FC<deleteCardProps> = (props) => {
+    //Handles the dropping of things onto the trash can
     const [, drop] = useDrop({
-        accept: ItemTypes.Card,
-        drop: (h, monitor) => deleteCard(monitor.getItem().id)
+        accept: [ItemTypes.Note],
+        drop: (item: { type: string; note: noteData }) =>
+            props.deleteNote(item.note.id)
     });
     return (
         <div>
             ref={drop}
-            <img src="Trash.png"></img>
+            <img src={trash}></img>
         </div>
     );
-}
+};
+
+export default DeleteItem;

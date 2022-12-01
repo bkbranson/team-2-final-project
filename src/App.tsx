@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { CardList } from "./components/CardList";
 import { CorkBoard } from "./components/CorkBoard";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { DeleteNote } from "./components/DeleteNote";
-import { TrashCan } from "./components/TrashCan";
-import { cardData } from "./interfaces/cardData";
+import DeleteItem from "./components/TrashCan";
+import { noteData } from "./interfaces/noteData";
 
 const sampleCorkBoard = [
     {
@@ -42,6 +42,13 @@ const sampleCorkBoard = [
 ];
 
 function App(): JSX.Element {
+    const [note, setNote] = useState<noteData[]>([]);
+
+    const deleteNote = (idd: number) => {
+        setNote(note.filter((note: noteData): boolean => note.id !== idd));
+        console.log("Delete!");
+    };
+
     return (
         <>
             <DndProvider backend={HTML5Backend}>
@@ -66,7 +73,7 @@ function App(): JSX.Element {
                             startingNotesAndPositionInfo={sampleCorkBoard}
                         ></CorkBoard>
                         <DeleteNote></DeleteNote>
-                        <TrashCan deleteCard={cardData.id}></TrashCan>
+                        <DeleteItem deleteNote={deleteNote}></DeleteItem>
                     </div>
                 </div>
             </DndProvider>
