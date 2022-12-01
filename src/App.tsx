@@ -66,10 +66,7 @@ function App(): JSX.Element {
                             startingNotesAndPositionInfo={sampleCorkBoard}
                         ></CorkBoard>
                         <DeleteNote></DeleteNote>
-                        <TrashCan
-                            id={cardData.id}
-                            deleteCard={cardData.id}
-                        ></TrashCan>
+                        <TrashCan deleteCard={cardData.id}></TrashCan>
                     </div>
                 </div>
             </DndProvider>
