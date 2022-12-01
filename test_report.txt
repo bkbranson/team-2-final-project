@@ -21,7 +21,7 @@ Browserslist: caniuse-lite is outdated. Please run:
         at useDragDropManager (/home/runner/work/team-2-final-project/team-2-final-project/node_modules/react-dnd/dist/cjs/hooks/useDragDropManager.js:21:28)
         at useDropTargetMonitor (/home/runner/work/team-2-final-project/team-2-final-project/node_modules/react-dnd/dist/cjs/hooks/internal/drop.js:34:60)
         at useDrop (/home/runner/work/team-2-final-project/team-2-final-project/node_modules/react-dnd/dist/cjs/hooks/useDrop.js:39:62)
-        at CorkBoard (/home/runner/work/team-2-final-project/team-2-final-project/src/components/CorkBoard.tsx:14:22)
+        at CorkBoard (/home/runner/work/team-2-final-project/team-2-final-project/src/components/CorkBoard.tsx:30:30)
         at renderWithHooks (/home/runner/work/team-2-final-project/team-2-final-project/node_modules/react-dom/cjs/react-dom.development.js:14985:18)
         at mountIndeterminateComponent (/home/runner/work/team-2-final-project/team-2-final-project/node_modules/react-dom/cjs/react-dom.development.js:17811:13)
         at beginWork (/home/runner/work/team-2-final-project/team-2-final-project/node_modules/react-dom/cjs/react-dom.development.js:19049:16)
@@ -81,7 +81,7 @@ Browserslist: caniuse-lite is outdated. Please run:
   console.error
     The above error occurred in the <CorkBoard> component:
     
-        at CorkBoard (/home/runner/work/team-2-final-project/team-2-final-project/src/components/CorkBoard.tsx:9:5)
+        at CorkBoard (/home/runner/work/team-2-final-project/team-2-final-project/src/components/CorkBoard.tsx:10:5)
     
     Consider adding an error boundary to your tree to customize error handling behavior.
     Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
@@ -110,7 +110,7 @@ Browserslist: caniuse-lite is outdated. Please run:
         at useDragDropManager (/home/runner/work/team-2-final-project/team-2-final-project/node_modules/react-dnd/dist/cjs/hooks/useDragDropManager.js:21:28)
         at useDropTargetMonitor (/home/runner/work/team-2-final-project/team-2-final-project/node_modules/react-dnd/dist/cjs/hooks/internal/drop.js:34:60)
         at useDrop (/home/runner/work/team-2-final-project/team-2-final-project/node_modules/react-dnd/dist/cjs/hooks/useDrop.js:39:62)
-        at CorkBoard (/home/runner/work/team-2-final-project/team-2-final-project/src/components/CorkBoard.tsx:14:22)
+        at CorkBoard (/home/runner/work/team-2-final-project/team-2-final-project/src/components/CorkBoard.tsx:30:30)
         at renderWithHooks (/home/runner/work/team-2-final-project/team-2-final-project/node_modules/react-dom/cjs/react-dom.development.js:14985:18)
         at mountIndeterminateComponent (/home/runner/work/team-2-final-project/team-2-final-project/node_modules/react-dom/cjs/react-dom.development.js:17811:13)
         at beginWork (/home/runner/work/team-2-final-project/team-2-final-project/node_modules/react-dom/cjs/react-dom.development.js:19049:16)
@@ -170,7 +170,7 @@ Browserslist: caniuse-lite is outdated. Please run:
   console.error
     The above error occurred in the <CorkBoard> component:
     
-        at CorkBoard (/home/runner/work/team-2-final-project/team-2-final-project/src/components/CorkBoard.tsx:9:5)
+        at CorkBoard (/home/runner/work/team-2-final-project/team-2-final-project/src/components/CorkBoard.tsx:10:5)
     
     Consider adding an error boundary to your tree to customize error handling behavior.
     Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
@@ -185,26 +185,26 @@ Browserslist: caniuse-lite is outdated. Please run:
 
 FAIL src/components/CorkBoard.test.tsx
   CorkBoard Component tests
-    ✕ CorkBoard displays a note (66 ms)
-    ✕ CorkBoard displays multiple notes (7 ms)
+    ✕ CorkBoard displays a note (85 ms)
+    ✕ CorkBoard displays multiple notes (12 ms)
 
   ● CorkBoard Component tests › CorkBoard displays a note
 
     Invariant Violation: Expected drag drop context
 
-      12 | }): JSX.Element {
-      13 |     //Handles the dropping of things onto the corkboard
-    > 14 |     const [, drop] = useDrop({
-         |                      ^
-      15 |         accept: ItemTypes.Card,
-      16 |         drop: () =>
-      17 |             addNoteData(
+      28 |     //Handles the dropping of things onto the corkboard
+      29 |     // NOTE FOR ME the fields 50, 75, blah blah blah, will need to be passed from the drag (last position, etc.) No grids like chess
+    > 30 |     const [{ item }, drop] = useDrop({
+         |                              ^
+      31 |         accept: ItemTypes.Card,
+      32 |         collect: (monitor) => ({
+      33 |             item: monitor.getItem()
 
       at invariant (node_modules/@react-dnd/invariant/src/index.ts:28:15)
       at useDragDropManager (node_modules/react-dnd/dist/cjs/hooks/useDragDropManager.js:21:28)
       at useDropTargetMonitor (node_modules/react-dnd/dist/cjs/hooks/internal/drop.js:34:60)
       at useDrop (node_modules/react-dnd/dist/cjs/hooks/useDrop.js:39:62)
-      at CorkBoard (src/components/CorkBoard.tsx:14:22)
+      at CorkBoard (src/components/CorkBoard.tsx:30:30)
       at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
       at mountIndeterminateComponent (node_modules/react-dom/cjs/react-dom.development.js:17811:13)
       at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19049:16)
@@ -242,19 +242,19 @@ FAIL src/components/CorkBoard.test.tsx
 
     Invariant Violation: Expected drag drop context
 
-      12 | }): JSX.Element {
-      13 |     //Handles the dropping of things onto the corkboard
-    > 14 |     const [, drop] = useDrop({
-         |                      ^
-      15 |         accept: ItemTypes.Card,
-      16 |         drop: () =>
-      17 |             addNoteData(
+      28 |     //Handles the dropping of things onto the corkboard
+      29 |     // NOTE FOR ME the fields 50, 75, blah blah blah, will need to be passed from the drag (last position, etc.) No grids like chess
+    > 30 |     const [{ item }, drop] = useDrop({
+         |                              ^
+      31 |         accept: ItemTypes.Card,
+      32 |         collect: (monitor) => ({
+      33 |             item: monitor.getItem()
 
       at invariant (node_modules/@react-dnd/invariant/src/index.ts:28:15)
       at useDragDropManager (node_modules/react-dnd/dist/cjs/hooks/useDragDropManager.js:21:28)
       at useDropTargetMonitor (node_modules/react-dnd/dist/cjs/hooks/internal/drop.js:34:60)
       at useDrop (node_modules/react-dnd/dist/cjs/hooks/useDrop.js:39:62)
-      at CorkBoard (src/components/CorkBoard.tsx:14:22)
+      at CorkBoard (src/components/CorkBoard.tsx:30:30)
       at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
       at mountIndeterminateComponent (node_modules/react-dom/cjs/react-dom.development.js:17811:13)
       at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19049:16)
@@ -291,18 +291,18 @@ FAIL src/components/CorkBoard.test.tsx
 -------------------|---------|----------|---------|---------|-------------------
 File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -------------------|---------|----------|---------|---------|-------------------
-All files          |     0.9 |        0 |    1.13 |    0.95 |                   
+All files          |    2.04 |        0 |    2.08 |    2.14 |                   
  src               |    7.69 |        0 |       0 |    7.69 |                   
-  App.tsx          |       0 |      100 |       0 |       0 | 9-43              
+  App.tsx          |       0 |      100 |       0 |       0 | 8-42              
   Overlay.tsx      |       0 |      100 |       0 |       0 | 7-8               
   Pic.tsx          |       0 |        0 |       0 |       0 | 5-13              
   Square.tsx       |       0 |        0 |       0 |       0 | 7-11              
   constants.ts     |     100 |      100 |     100 |     100 |                   
- src/components    |    0.48 |        0 |     1.2 |    0.51 |                   
+ src/components    |    1.73 |        0 |    2.19 |    1.81 |                   
   Card.tsx         |       0 |      100 |       0 |       0 | 6-49              
-  CardComp.tsx     |       0 |      100 |       0 |       0 | 20-41             
+  CardComp.tsx     |       0 |      100 |       0 |       0 | 20-45             
   CardList.tsx     |       0 |        0 |       0 |       0 | 10-241            
-  CorkBoard.tsx    |    12.5 |      100 |      25 |    12.5 | 17-80             
+  CorkBoard.tsx    |    12.5 |        0 |   16.66 |    12.5 | 32-201            
   DeleteNote.tsx   |       0 |      100 |       0 |       0 | 7-22              
   EditCard.tsx     |       0 |      100 |       0 |       0 | 20-149            
   FilterNote.tsx   |       0 |        0 |       0 |       0 | 20-46             
@@ -318,5 +318,5 @@ All files          |     0.9 |        0 |    1.13 |    0.95 |
 Test Suites: 1 failed, 1 total
 Tests:       2 failed, 2 total
 Snapshots:   0 total
-Time:        3.1 s
+Time:        3.137 s
 Ran all test suites.
