@@ -5,10 +5,213 @@ import CardComp from "./CardComp";
 import { MakeNote } from "./MakeNote";
 import { FilterNote } from "./FilterNote";
 import { cardData } from "../interfaces/cardData";
+import "../CardList.css";
 
 export function CardList(): JSX.Element {
-    const [currList, modList] = useState<cardData[]>([]); // the entire list of tasks
-    const [displayList, modDisList] = useState<cardData[]>([]); // what is going to be displayed (due to filter)
+    const [currList, modList] = useState<cardData[]>([
+        {
+            task: {
+                title: "CISC450 - HW4",
+                description: "Graphs & More!",
+                priority: "medium",
+                thumbColor: "Coral",
+                assigned: ["Blade"]
+            },
+            id: 0
+        },
+        {
+            task: {
+                title: "CISC450 - HW3",
+                description: "I forgot to do it :[",
+                priority: "high",
+                thumbColor: "Coral",
+                assigned: ["Blade"]
+            },
+            id: 1
+        },
+        {
+            task: {
+                title: "CISC450 - Study",
+                description: "Final on the 14th!!!",
+                priority: "medium",
+                thumbColor: "Coral",
+                assigned: ["Blade"]
+            },
+            id: 2
+        },
+        {
+            task: {
+                title: "GEOL107 - Study",
+                description: "mmm yummmy rocks",
+                priority: "medium",
+                thumbColor: "Plum",
+                assigned: ["Blade", "Zach"]
+            },
+            id: 3
+        },
+        {
+            task: {
+                title: "GEOL107 - Extra Credit",
+                description: "Copy definitions from the textbook",
+                priority: "low",
+                thumbColor: "Plum",
+                assigned: ["Blade", "Zach"]
+            },
+            id: 4
+        },
+        {
+            task: {
+                title: "CISC437 - PS7",
+                description: "Practice Set 7",
+                priority: "high",
+                thumbColor: "Pink",
+                assigned: ["Blade", "Zach", "Tommy"]
+            },
+            id: 5
+        },
+        {
+            task: {
+                title: "Schedule OH Appointment w/ TA",
+                description: "I have no idea what's going on",
+                priority: "medium",
+                thumbColor: "Orange",
+                assigned: ["Blade"]
+            },
+            id: 6
+        },
+        {
+            task: {
+                title: "Buy More Masks",
+                description: "What it sounds like.",
+                priority: "low",
+                thumbColor: "Orange",
+                assigned: ["Brandon"]
+            },
+            id: 7
+        },
+        {
+            task: {
+                title: "CISC275 - Sprint Restrospective",
+                description: "Notes on what we did/can do better.",
+                priority: "medium",
+                thumbColor: "Coral",
+                assigned: ["Michael", "Blade", "Brandon"]
+            },
+            id: 8
+        },
+        {
+            task: {
+                title: "Steal My Dog Back",
+                description: "I miss him",
+                priority: "high",
+                thumbColor: "Mocassin",
+                assigned: ["Michael"]
+            },
+            id: 9
+        }
+    ]);
+    const [displayList, modDisList] = useState<cardData[]>([
+        {
+            task: {
+                title: "CISC450 - HW4",
+                description: "Graphs & More!",
+                priority: "medium",
+                thumbColor: "Coral",
+                assigned: ["Blade"]
+            },
+            id: 0
+        },
+        {
+            task: {
+                title: "CISC450 - HW3",
+                description: "I forgot to do it :[",
+                priority: "high",
+                thumbColor: "Coral",
+                assigned: ["Blade"]
+            },
+            id: 1
+        },
+        {
+            task: {
+                title: "CISC450 - Study",
+                description: "Final on the 14th!!!",
+                priority: "medium",
+                thumbColor: "Coral",
+                assigned: ["Blade"]
+            },
+            id: 2
+        },
+        {
+            task: {
+                title: "GEOL107 - Study",
+                description: "mmm yummmy rocks",
+                priority: "medium",
+                thumbColor: "Plum",
+                assigned: ["Blade", "Zach"]
+            },
+            id: 3
+        },
+        {
+            task: {
+                title: "GEOL107 - Extra Credit",
+                description: "Copy definitions from the textbook",
+                priority: "low",
+                thumbColor: "Plum",
+                assigned: ["Blade", "Zach"]
+            },
+            id: 4
+        },
+        {
+            task: {
+                title: "CISC437 - PS7",
+                description: "Practice Set 7",
+                priority: "high",
+                thumbColor: "Pink",
+                assigned: ["Blade", "Zach", "Tommy"]
+            },
+            id: 5
+        },
+        {
+            task: {
+                title: "Schedule OH Appointment w/ TA",
+                description: "I have no idea what's going on",
+                priority: "medium",
+                thumbColor: "Orange",
+                assigned: ["Blade"]
+            },
+            id: 6
+        },
+        {
+            task: {
+                title: "Buy More Masks",
+                description: "What it sounds like.",
+                priority: "low",
+                thumbColor: "Orange",
+                assigned: ["Brandon"]
+            },
+            id: 7
+        },
+        {
+            task: {
+                title: "CISC275 - Sprint Restrospective",
+                description: "Notes on what we did/can do better.",
+                priority: "medium",
+                thumbColor: "Coral",
+                assigned: ["Michael", "Blade", "Brandon"]
+            },
+            id: 8
+        },
+        {
+            task: {
+                title: "Steal My Dog Back",
+                description: "I miss him",
+                priority: "high",
+                thumbColor: "Mocassin",
+                assigned: ["Michael"]
+            },
+            id: 9
+        }
+    ]); // what is going to be displayed (due to filter)
 
     //maintains the id of cards
     const [currentId, setCurrentId] = useState<number>(currList.length);
@@ -236,7 +439,7 @@ export function CardList(): JSX.Element {
             <Button onClick={resetList}>Clear the list</Button>
             <Button onClick={() => sortIt(true)}>Sort by Priority</Button>
             <Button onClick={() => sortIt(false)}>Sort by Color</Button>
-            <div id="CardList">
+            <div id="CardList" className="scroll">
                 {displayList.map((cardData: cardData) => {
                     return (
                         <CardComp

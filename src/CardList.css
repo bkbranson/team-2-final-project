@@ -1,0 +1,10 @@
+div.scroll {
+    margin: 4px, 4px;
+    padding: 10px;
+    background-color: gray;
+    height: 550px;
+    width: 250px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: justify;
+}

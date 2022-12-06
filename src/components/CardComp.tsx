@@ -29,7 +29,7 @@ function CardComp({
             <Card
                 style={{
                     width: "200px",
-                    height: "100px",
+                    height: "190px",
                     backgroundColor: task.thumbColor
                 }}
                 //ref makes the dragging of the Card Work
