@@ -185,8 +185,8 @@ Browserslist: caniuse-lite is outdated. Please run:
 
 FAIL src/components/CorkBoard.test.tsx
   CorkBoard Component tests
-    ✕ CorkBoard displays a note (87 ms)
-    ✕ CorkBoard displays multiple notes (9 ms)
+    ✕ CorkBoard displays a note (85 ms)
+    ✕ CorkBoard displays multiple notes (8 ms)
 
   ● CorkBoard Component tests › CorkBoard displays a note
 
@@ -301,12 +301,12 @@ All files          |    1.97 |        0 |    1.53 |    2.04 |
  src/components    |    1.71 |        0 |     1.6 |    1.77 |                   
   Card.tsx         |       0 |      100 |       0 |       0 | 6-49              
   CardComp.tsx     |       0 |      100 |       0 |       0 | 20-48             
-  CardList.tsx     |       0 |        0 |       0 |       0 | 10-503            
-  CorkBoard.tsx    |   11.11 |        0 |   13.33 |   11.11 | 34-209            
+  CardList.tsx     |       0 |        0 |       0 |       0 | 11-1126           
+  CorkBoard.tsx    |   11.11 |        0 |   13.33 |   11.11 | 34-210            
   DeleteNote.tsx   |       0 |      100 |       0 |       0 | 7-22              
   EditCard.tsx     |       0 |      100 |       0 |       0 | 20-149            
   FilterNote.tsx   |       0 |        0 |       0 |       0 | 25-81             
-  MakeNote.tsx     |       0 |      100 |       0 |       0 | 13-126            
+  MakeNote.tsx     |       0 |      100 |       0 |       0 | 14-127            
   Note.tsx         |       0 |      100 |       0 |       0 | 9-14              
   TrashCan.tsx     |      25 |      100 |       0 |      25 | 13-22             
  src/interfaces    |       0 |        0 |       0 |       0 |                   
@@ -318,5 +318,5 @@ All files          |    1.97 |        0 |    1.53 |    2.04 |
 Test Suites: 1 failed, 1 total
 Tests:       2 failed, 2 total
 Snapshots:   0 total
-Time:        3.637 s
+Time:        3.846 s
 Ran all test suites.
