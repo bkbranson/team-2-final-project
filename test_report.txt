@@ -185,8 +185,8 @@ Browserslist: caniuse-lite is outdated. Please run:
 
 FAIL src/components/CorkBoard.test.tsx
   CorkBoard Component tests
-    ✕ CorkBoard displays a note (85 ms)
-    ✕ CorkBoard displays multiple notes (12 ms)
+    ✕ CorkBoard displays a note (84 ms)
+    ✕ CorkBoard displays multiple notes (7 ms)
 
   ● CorkBoard Component tests › CorkBoard displays a note
 
@@ -291,21 +291,21 @@ FAIL src/components/CorkBoard.test.tsx
 -------------------|---------|----------|---------|---------|-------------------
 File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -------------------|---------|----------|---------|---------|-------------------
-All files          |    2.04 |        0 |    2.08 |    2.14 |                   
+All files          |    1.68 |        0 |    1.58 |    1.74 |                   
  src               |    7.69 |        0 |       0 |    7.69 |                   
   App.tsx          |       0 |      100 |       0 |       0 | 8-42              
   Overlay.tsx      |       0 |      100 |       0 |       0 | 7-8               
   Pic.tsx          |       0 |        0 |       0 |       0 | 5-13              
   Square.tsx       |       0 |        0 |       0 |       0 | 7-11              
   constants.ts     |     100 |      100 |     100 |     100 |                   
- src/components    |    1.73 |        0 |    2.19 |    1.81 |                   
+ src/components    |     1.4 |        0 |    1.65 |    1.45 |                   
   Card.tsx         |       0 |      100 |       0 |       0 | 6-49              
   CardComp.tsx     |       0 |      100 |       0 |       0 | 20-45             
-  CardList.tsx     |       0 |        0 |       0 |       0 | 10-241            
+  CardList.tsx     |       0 |        0 |       0 |       0 | 10-503            
   CorkBoard.tsx    |    12.5 |        0 |   16.66 |    12.5 | 32-201            
   DeleteNote.tsx   |       0 |      100 |       0 |       0 | 7-22              
   EditCard.tsx     |       0 |      100 |       0 |       0 | 20-149            
-  FilterNote.tsx   |       0 |        0 |       0 |       0 | 20-46             
+  FilterNote.tsx   |       0 |        0 |       0 |       0 | 25-81             
   MakeNote.tsx     |       0 |      100 |       0 |       0 | 13-126            
   Note.tsx         |       0 |      100 |       0 |       0 | 8-13              
   TrashCan.tsx     |       0 |      100 |       0 |       0 | 4                 
@@ -318,5 +318,5 @@ All files          |    2.04 |        0 |    2.08 |    2.14 |
 Test Suites: 1 failed, 1 total
 Tests:       2 failed, 2 total
 Snapshots:   0 total
-Time:        3.137 s
+Time:        3.127 s
 Ran all test suites.
