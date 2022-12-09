@@ -17,6 +17,9 @@ function CardComp({
     editCard: (id: number, newTask: Task) => void;
     deleteCard: (id: number) => void;
 }): JSX.Element {
+    //CONSTANTS
+    const CARDWIDTH = "100%";
+
     const [, drag] = useDrag({
         //type is Card; Type determines where it can be dropped
         item: { type: ItemTypes.Card, id: id, shouldAdd: true, task: task }
@@ -28,7 +31,7 @@ function CardComp({
         <div>
             <Card
                 style={{
-                    width: "100%",
+                    width: CARDWIDTH,
                     display: "inline-block",
                     backgroundColor: task.thumbColor,
                     wordBreak: "break-all",

@@ -19,9 +19,15 @@ const DeleteItem: React.FC<deleteCardProps> = (props) => {
             task: Task;
         }) => props.deleteNote(item.id)
     });
+
+    const FULLSIZE = "100%";
+
     return (
-        <div ref={drop} style={{ height: "100%", width: "100%" }}>
-            <img src={trash} style={{ height: "100%", width: "100%" }}></img>
+        <div ref={drop} style={{ height: FULLSIZE, width: FULLSIZE }}>
+            <img
+                src={trash}
+                style={{ height: FULLSIZE, width: FULLSIZE }}
+            ></img>
         </div>
     );
 };

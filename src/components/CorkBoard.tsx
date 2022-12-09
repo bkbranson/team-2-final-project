@@ -13,6 +13,16 @@ export function CorkBoard({
 }: {
     startingNotesAndPositionInfo: noteData[];
 }): JSX.Element {
+    //CONSTANTS
+    const DEPRECATEDVARIABLE = 0;
+    const NULLPOSITIONDEFAULT = 0;
+    const BOARDTOP = 50;
+    const BOARDLEFT = 700;
+    const OFFSETCORRECTION = 100;
+    const FULLSIZE = "100%";
+    const DEFAULTMAXWIDTH = 205;
+    const DEFAULTMAXFONTSIZE = 12;
+
     //state for holding our note and position infos
     const [notesAndPositionInfo, setNotesAndPositionInfo] = useState<
         noteData[]
@@ -45,16 +55,16 @@ export function CorkBoard({
                         thumbColor: item.task.thumbColor,
                         assigned: item.task.assigned
                     },
-                    50,
-                    75,
+                    DEPRECATEDVARIABLE,
+                    DEPRECATEDVARIABLE,
                     currentOffset.y -
-                        boardTop +
+                        BOARDTOP +
                         (grabOffset?.y - sourceOffset?.y) +
                         scrollPositionY,
                     currentOffset.x -
-                        boardLeft +
+                        BOARDLEFT +
                         (grabOffset?.x - sourceOffset?.x) -
-                        100 +
+                        OFFSETCORRECTION +
                         scrollPositionX,
                     1
                 );
@@ -62,15 +72,15 @@ export function CorkBoard({
                 editNoteData(
                     item.id,
                     item.task,
-                    50,
-                    75,
+                    DEPRECATEDVARIABLE,
+                    DEPRECATEDVARIABLE,
                     currentOffset.y -
-                        boardTop +
+                        BOARDTOP +
                         (grabOffset?.y - sourceOffset?.y) +
                         scrollPositionY,
                     currentOffset.x -
-                        boardLeft +
-                        (grabOffset?.x - sourceOffset?.x - 100) +
+                        BOARDLEFT +
+                        (grabOffset?.x - sourceOffset?.x - OFFSETCORRECTION) +
                         scrollPositionX,
                     1
                 );
@@ -83,22 +93,23 @@ export function CorkBoard({
         (monitor) => ({
             currentOffset:
                 monitor.getSourceClientOffset() === null
-                    ? { x: 0, y: 0 }
+                    ? { x: NULLPOSITIONDEFAULT, y: NULLPOSITIONDEFAULT }
                     : (monitor.getSourceClientOffset() as XYCoord),
             grabOffset:
                 monitor.getInitialClientOffset() === null
-                    ? { x: 0, y: 0 }
+                    ? { x: NULLPOSITIONDEFAULT, y: NULLPOSITIONDEFAULT }
                     : (monitor.getInitialClientOffset() as XYCoord),
             sourceOffset:
                 monitor.getInitialSourceClientOffset() === null
-                    ? { x: 0, y: 0 }
+                    ? { x: NULLPOSITIONDEFAULT, y: NULLPOSITIONDEFAULT }
                     : (monitor.getInitialSourceClientOffset() as XYCoord)
         })
     );
 
     // this is the state that keeps track of the scroll positions
-    const [scrollPositionY, setScrollPositionY] = useState(0);
-    const [scrollPositionX, setScrollYPositionX] = useState(0);
+    const [scrollPositionY, setScrollPositionY] = useState(NULLPOSITIONDEFAULT);
+    const [scrollPositionX, setScrollYPositionX] =
+        useState(NULLPOSITIONDEFAULT);
 
     //this is a function that updates the scroll positions state
     const handleScroll = () => {
@@ -117,8 +128,6 @@ export function CorkBoard({
         };
     });
     //state that will be needed for when the board scales
-    const [boardTop] = useState<number>(50);
-    const [boardLeft] = useState<number>(700); // MODIFYING this results in issues, but the BoardSize is not 700 wide
     const [xScaleFactor, setxScaleFactor] = useState<number>(1);
 
     ///*
@@ -197,8 +206,8 @@ export function CorkBoard({
         <div
             ref={drop}
             style={{
-                height: "100%",
-                width: "100%",
+                height: FULLSIZE,
+                width: FULLSIZE,
                 backgroundColor: "#7E481C",
                 position: "relative",
                 border: "4px solid #422311"
@@ -218,8 +227,8 @@ export function CorkBoard({
                             top: noteData.top + "px",
                             left: noteData.left + "px",
                             zIndex: noteData.zIndex + "%",
-                            fontSize: 12 * xScaleFactor + "px",
-                            maxWidth: 205 * xScaleFactor + "px",
+                            fontSize: DEFAULTMAXFONTSIZE * xScaleFactor + "px",
+                            maxWidth: DEFAULTMAXWIDTH * xScaleFactor + "px",
                             //aspectRatio: "1",
                             wordBreak: "break-word",
                             wordWrap: "break-word",
@@ -240,7 +249,7 @@ export function CorkBoard({
             >
                 <TrashCan deleteNote={deleteNote}></TrashCan>
             </div>
-            <div style={{ position: "absolute", top: "100%" }}>
+            <div style={{ position: "absolute", top: FULLSIZE }}>
                 {/* Form that sets the scale factor of the board */}
                 <Form.Group className="makeCorkScale">
                     <b>Scale: </b>

@@ -115,6 +115,7 @@ export function MakeNote({
                                         value={p}
                                         label={p}
                                         onChange={priorityHandler}
+                                        checked={priority === p}
                                     />
                                 </>
                             ))}
@@ -132,6 +133,7 @@ export function MakeNote({
                                         value={c}
                                         label={c}
                                         onChange={colorHandler}
+                                        checked={color === c}
                                     />
                                 </>
                             ))}
