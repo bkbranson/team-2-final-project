@@ -834,7 +834,7 @@ export function CardList(): JSX.Element {
                     plum
                 )
                     ? newList.push({ ...cardD, task: { ...cardD.task } })
-                    : console.log("")
+                    : null
             );
         } else {
             newList = newList.filter(
@@ -864,7 +864,7 @@ export function CardList(): JSX.Element {
                     plum
                 )
                     ? newList.push({ ...cardD, task: { ...cardD.task } })
-                    : console.log("")
+                    : null
             );
         } else {
             newList = newList.filter(
@@ -900,7 +900,7 @@ export function CardList(): JSX.Element {
                     plum
                 )
                     ? newList.push({ ...cardD, task: { ...cardD.task } })
-                    : console.log("")
+                    : null
             );
         }
         if (medium) {
@@ -930,7 +930,7 @@ export function CardList(): JSX.Element {
                     plum
                 )
                     ? newList.push({ ...cardD, task: { ...cardD.task } })
-                    : console.log("")
+                    : null
             );
         }
         if (high) {
@@ -960,7 +960,7 @@ export function CardList(): JSX.Element {
                     plum
                 )
                     ? newList.push({ ...cardD, task: { ...cardD.task } })
-                    : console.log("")
+                    : null
             );
         }
         //filters the colors
@@ -991,7 +991,7 @@ export function CardList(): JSX.Element {
                     plum
                 )
                     ? newList.push({ ...cardD, task: { ...cardD.task } })
-                    : console.log("")
+                    : null
             );
         }
         if (pink) {
@@ -1020,7 +1020,7 @@ export function CardList(): JSX.Element {
                     plum
                 )
                     ? newList.push({ ...cardD, task: { ...cardD.task } })
-                    : console.log("")
+                    : null
             );
         }
         if (orange) {
@@ -1049,7 +1049,7 @@ export function CardList(): JSX.Element {
                     plum
                 )
                     ? newList.push({ ...cardD, task: { ...cardD.task } })
-                    : console.log("")
+                    : null
             );
         }
         if (moccasin) {
@@ -1078,7 +1078,7 @@ export function CardList(): JSX.Element {
                     plum
                 )
                     ? newList.push({ ...cardD, task: { ...cardD.task } })
-                    : console.log("")
+                    : null
             );
         }
         if (plum) {
@@ -1107,7 +1107,7 @@ export function CardList(): JSX.Element {
                     plum
                 )
                     ? newList.push({ ...cardD, task: { ...cardD.task } })
-                    : console.log("")
+                    : null
             );
         }
         modDisList(newList);
