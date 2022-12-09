@@ -21,7 +21,7 @@ Browserslist: caniuse-lite is outdated. Please run:
         at useDragDropManager (/home/runner/work/team-2-final-project/team-2-final-project/node_modules/react-dnd/dist/cjs/hooks/useDragDropManager.js:21:28)
         at useDropTargetMonitor (/home/runner/work/team-2-final-project/team-2-final-project/node_modules/react-dnd/dist/cjs/hooks/internal/drop.js:34:60)
         at useDrop (/home/runner/work/team-2-final-project/team-2-final-project/node_modules/react-dnd/dist/cjs/hooks/useDrop.js:39:62)
-        at CorkBoard (/home/runner/work/team-2-final-project/team-2-final-project/src/components/CorkBoard.tsx:32:30)
+        at CorkBoard (/home/runner/work/team-2-final-project/team-2-final-project/src/components/CorkBoard.tsx:42:30)
         at renderWithHooks (/home/runner/work/team-2-final-project/team-2-final-project/node_modules/react-dom/cjs/react-dom.development.js:14985:18)
         at mountIndeterminateComponent (/home/runner/work/team-2-final-project/team-2-final-project/node_modules/react-dom/cjs/react-dom.development.js:17811:13)
         at beginWork (/home/runner/work/team-2-final-project/team-2-final-project/node_modules/react-dom/cjs/react-dom.development.js:19049:16)
@@ -110,7 +110,7 @@ Browserslist: caniuse-lite is outdated. Please run:
         at useDragDropManager (/home/runner/work/team-2-final-project/team-2-final-project/node_modules/react-dnd/dist/cjs/hooks/useDragDropManager.js:21:28)
         at useDropTargetMonitor (/home/runner/work/team-2-final-project/team-2-final-project/node_modules/react-dnd/dist/cjs/hooks/internal/drop.js:34:60)
         at useDrop (/home/runner/work/team-2-final-project/team-2-final-project/node_modules/react-dnd/dist/cjs/hooks/useDrop.js:39:62)
-        at CorkBoard (/home/runner/work/team-2-final-project/team-2-final-project/src/components/CorkBoard.tsx:32:30)
+        at CorkBoard (/home/runner/work/team-2-final-project/team-2-final-project/src/components/CorkBoard.tsx:42:30)
         at renderWithHooks (/home/runner/work/team-2-final-project/team-2-final-project/node_modules/react-dom/cjs/react-dom.development.js:14985:18)
         at mountIndeterminateComponent (/home/runner/work/team-2-final-project/team-2-final-project/node_modules/react-dom/cjs/react-dom.development.js:17811:13)
         at beginWork (/home/runner/work/team-2-final-project/team-2-final-project/node_modules/react-dom/cjs/react-dom.development.js:19049:16)
@@ -186,25 +186,25 @@ Browserslist: caniuse-lite is outdated. Please run:
 FAIL src/components/CorkBoard.test.tsx
   CorkBoard Component tests
     ✕ CorkBoard displays a note (85 ms)
-    ✕ CorkBoard displays multiple notes (8 ms)
+    ✕ CorkBoard displays multiple notes (7 ms)
 
   ● CorkBoard Component tests › CorkBoard displays a note
 
     Invariant Violation: Expected drag drop context
 
-      30 |     //Handles the dropping of things onto the corkboard
-      31 |     // NOTE FOR ME the fields 50, 75, blah blah blah, will need to be passed from the drag (last position, etc.) No grids like chess
-    > 32 |     const [{ item }, drop] = useDrop({
+      40 |     //Handles the dropping of things onto the corkboard
+      41 |     // NOTE FOR ME the fields 50, 75, blah blah blah, will need to be passed from the drag (last position, etc.) No grids like chess
+    > 42 |     const [{ item }, drop] = useDrop({
          |                              ^
-      33 |         accept: ItemTypes.Card,
-      34 |         collect: (monitor) => ({
-      35 |             item: monitor.getItem()
+      43 |         accept: ItemTypes.Card,
+      44 |         collect: (monitor) => ({
+      45 |             item: monitor.getItem()
 
       at invariant (node_modules/@react-dnd/invariant/src/index.ts:28:15)
       at useDragDropManager (node_modules/react-dnd/dist/cjs/hooks/useDragDropManager.js:21:28)
       at useDropTargetMonitor (node_modules/react-dnd/dist/cjs/hooks/internal/drop.js:34:60)
       at useDrop (node_modules/react-dnd/dist/cjs/hooks/useDrop.js:39:62)
-      at CorkBoard (src/components/CorkBoard.tsx:32:30)
+      at CorkBoard (src/components/CorkBoard.tsx:42:30)
       at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
       at mountIndeterminateComponent (node_modules/react-dom/cjs/react-dom.development.js:17811:13)
       at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19049:16)
@@ -242,19 +242,19 @@ FAIL src/components/CorkBoard.test.tsx
 
     Invariant Violation: Expected drag drop context
 
-      30 |     //Handles the dropping of things onto the corkboard
-      31 |     // NOTE FOR ME the fields 50, 75, blah blah blah, will need to be passed from the drag (last position, etc.) No grids like chess
-    > 32 |     const [{ item }, drop] = useDrop({
+      40 |     //Handles the dropping of things onto the corkboard
+      41 |     // NOTE FOR ME the fields 50, 75, blah blah blah, will need to be passed from the drag (last position, etc.) No grids like chess
+    > 42 |     const [{ item }, drop] = useDrop({
          |                              ^
-      33 |         accept: ItemTypes.Card,
-      34 |         collect: (monitor) => ({
-      35 |             item: monitor.getItem()
+      43 |         accept: ItemTypes.Card,
+      44 |         collect: (monitor) => ({
+      45 |             item: monitor.getItem()
 
       at invariant (node_modules/@react-dnd/invariant/src/index.ts:28:15)
       at useDragDropManager (node_modules/react-dnd/dist/cjs/hooks/useDragDropManager.js:21:28)
       at useDropTargetMonitor (node_modules/react-dnd/dist/cjs/hooks/internal/drop.js:34:60)
       at useDrop (node_modules/react-dnd/dist/cjs/hooks/useDrop.js:39:62)
-      at CorkBoard (src/components/CorkBoard.tsx:32:30)
+      at CorkBoard (src/components/CorkBoard.tsx:42:30)
       at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
       at mountIndeterminateComponent (node_modules/react-dom/cjs/react-dom.development.js:17811:13)
       at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19049:16)
@@ -291,24 +291,23 @@ FAIL src/components/CorkBoard.test.tsx
 -------------------|---------|----------|---------|---------|-------------------
 File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -------------------|---------|----------|---------|---------|-------------------
-All files          |    1.97 |        0 |    1.53 |    2.04 |                   
+All files          |    4.56 |        0 |    1.57 |    4.71 |                   
  src               |    7.69 |        0 |       0 |    7.69 |                   
   App.tsx          |       0 |      100 |       0 |       0 | 8-42              
   Overlay.tsx      |       0 |      100 |       0 |       0 | 7-8               
   Pic.tsx          |       0 |        0 |       0 |       0 | 5-13              
   Square.tsx       |       0 |        0 |       0 |       0 | 7-11              
   constants.ts     |     100 |      100 |     100 |     100 |                   
- src/components    |    1.71 |        0 |     1.6 |    1.77 |                   
-  Card.tsx         |       0 |      100 |       0 |       0 | 6-49              
-  CardComp.tsx     |       0 |      100 |       0 |       0 | 20-48             
+ src/components    |    4.42 |        0 |    1.63 |    4.57 |                   
+  CardComp.tsx     |       0 |      100 |       0 |       0 | 21-51             
   CardList.tsx     |       0 |        0 |       0 |       0 | 11-1126           
-  CorkBoard.tsx    |   11.11 |        0 |   13.33 |   11.11 | 34-210            
+  CorkBoard.tsx    |   28.57 |        0 |   13.33 |   28.57 | 44-219            
   DeleteNote.tsx   |       0 |      100 |       0 |       0 | 7-22              
   EditCard.tsx     |       0 |      100 |       0 |       0 | 20-149            
   FilterNote.tsx   |       0 |        0 |       0 |       0 | 25-81             
-  MakeNote.tsx     |       0 |      100 |       0 |       0 | 14-127            
+  MakeNote.tsx     |       0 |      100 |       0 |       0 | 14-128            
   Note.tsx         |       0 |      100 |       0 |       0 | 9-14              
-  TrashCan.tsx     |      25 |      100 |       0 |      25 | 13-22             
+  TrashCan.tsx     |      20 |      100 |       0 |      20 | 13-25             
  src/interfaces    |       0 |        0 |       0 |       0 |                   
   CardListProps.ts |       0 |        0 |       0 |       0 |                   
   cardData.ts      |       0 |        0 |       0 |       0 |                   
@@ -318,5 +317,5 @@ All files          |    1.97 |        0 |    1.53 |    2.04 |
 Test Suites: 1 failed, 1 total
 Tests:       2 failed, 2 total
 Snapshots:   0 total
-Time:        3.846 s
+Time:        3.309 s
 Ran all test suites.
